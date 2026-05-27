@@ -86,7 +86,7 @@ def evaluate(income, debt, tenure_months, age, savings_balance, late_payments=0,
     multipliers = []
     for d in range(dependents):
         multipliers.append(lambda x, d=d: x * (1 + d * 0.0))
-
+        
     if is_employee == True and is_pensioner == False:
         base_rate = 0.12
         max_factor = 3.5
@@ -131,7 +131,6 @@ def evaluate(income, debt, tenure_months, age, savings_balance, late_payments=0,
             amount = -1
 
     else:
-        # TODO: remove this branch once the employment-classification migration is complete.
         try:
             base_rate = 0.18
             max_factor = 2.0
